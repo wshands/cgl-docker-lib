@@ -5,7 +5,7 @@ id: "RNA-seq-CGL"
 label: "RNA-seq CGL Pipeline"
 cwlVersion: v1.0
 doc: |
-    ![build_status](https://quay.io/ucsc_cgl/rnaseq-cgl-pipeline/status)
+    ![build_status](https://quay.io/wshands/rnaseq-cgl-pipeline/status)
     The RNA-seq CGL pipeline.
     ```
     Usage:
@@ -19,7 +19,7 @@ doc: |
 
 requirements:
   - class: DockerRequirement
-    dockerPull: "quay.io/ucsc_cgl/rnaseq-cgl-pipeline"
+    dockerPull: "quay.io/wshands/rnaseq-cgl-pipeline"
 hints:
   - class: ResourceRequirement
     coresMin: 1
@@ -104,6 +104,6 @@ outputs:
        glob: ./*
     doc: "Result files RNA-seq CGL pipeline"
 
-baseCommand: ["wrapper.py"]
+baseCommand: ["python","/opt/rnaseq-pipeline/wrapper.py"]
 
 
