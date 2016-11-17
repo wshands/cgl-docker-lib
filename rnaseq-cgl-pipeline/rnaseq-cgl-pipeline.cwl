@@ -5,7 +5,7 @@ id: "RNA-seq-CGL"
 label: "RNA-seq CGL Pipeline"
 cwlVersion: v1.0
 doc: |
-    ![build_status](https://quay.io/ucsc_cgl/rnaseq-cgl-pipeline/status)
+    ![build_status](https://quay.io/wshands/rnaseq-cgl-pipeline/status)
     The RNA-seq CGL pipeline.
     ```
     Usage:
