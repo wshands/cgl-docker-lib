@@ -1,0 +1,27 @@
+{
+    "samples": [
+        {
+        "class": "File",
+        "path": "https://s3.amazonaws.com/bcbio_nextgen/NA12878-NGv3-LAB1360-A_1.fastq.gz"
+        },
+        {
+        "class": "File",
+        "path": "https://s3.amazonaws.com/bcbio_nextgen/NA12878-NGv3-LAB1360-A_2.fastq.gz"
+        }        
+    ],
+
+    "star": "",
+
+    "rsem": "",
+
+    "kallisto": "",
+
+    "disable-cutadapt": "false",
+
+    "save-bam": "false",
+
+    "save-wiggle": "false",
+
+    "no-clean": "true"
+
+}
