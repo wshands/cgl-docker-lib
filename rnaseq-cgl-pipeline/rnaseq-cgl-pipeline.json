@@ -10,11 +10,11 @@
         }        
     ],
 
-    "star": "",
+    "star": "./starIndex_hg38_no_alt.tar.gz",
 
-    "rsem": "",
+    "rsem": "./rsem_ref_hg38_no_alt.tar.gz",
 
-    "kallisto": "",
+    "kallisto": "./kallisto_hg38.idx",
 
     "disable-cutadapt": "false",
 
