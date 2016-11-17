@@ -19,7 +19,7 @@ doc: |
 
 requirements:
   - class: DockerRequirement
-    dockerPull: "quay.io/ucsc_cgl/rnaseq-cgl-pipeline"
+    dockerPull: "quay.io/wshands/rnaseq-cgl-pipeline"
 hints:
   - class: ResourceRequirement
     coresMin: 1
