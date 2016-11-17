@@ -104,6 +104,6 @@ outputs:
        glob: ./*
     doc: "Result files RNA-seq CGL pipeline"
 
-baseCommand: ["wrapper.py"]
+baseCommand: ["python","/opt/rnaseq-pipeline/wrapper.py"]
 
 
