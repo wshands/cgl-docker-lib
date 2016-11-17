@@ -16,12 +16,12 @@
 
     "kallisto": "./kallisto_hg38.idx",
 
-    "disable-cutadapt": "false",
+    "disable-cutadapt": false,
 
-    "save-bam": "false",
+    "save-bam": false,
 
-    "save-wiggle": "false",
+    "save-wiggle": false,
 
-    "no-clean": "true"
+    "no-clean": true
 
 }
