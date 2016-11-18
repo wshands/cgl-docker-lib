@@ -2,15 +2,15 @@
     "samples": [
         {
         "class": "File",
-        "path": "./NA12878-NGv3-LAB1360-A.tar"
+        "path": "/mnt/actiontest/rnaseqteststuff/NA12878-NGv3-LAB1360-A.tar"
         }
     ],
 
-    "star": "./starIndex_hg38_no_alt.tar.gz",
+    "star": "/mnt/actiontest/rnaseqteststuff/starIndex_hg38_no_alt.tar.gz",
 
-    "rsem": "./rsem_ref_hg38_no_alt.tar.gz",
+    "rsem": "/mnt/actiontest/rnaseqteststuff/rsem_ref_hg38_no_alt.tar.gz",
 
-    "kallisto": "./kallisto_hg38.idx",
+    "kallisto": "/mnt/actiontest/rnaseqteststuff/kallisto_hg38.idx",
 
     "disable-cutadapt": false,
 
