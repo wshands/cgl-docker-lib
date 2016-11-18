@@ -146,6 +146,7 @@ def main():
     sock_mount = [x['Source'] == x['Destination'] for x in mounts if 'docker.sock' in x['Source']]
     require(len(sock_mount) == 1, 'Missing socket mount. Requires the following: '
                                   'docker run -v /var/run/docker.sock:/var/run/docker.sock')
+    '''
     # Ensure formatting of command for 2 mount points
     if len(mounts) == 2:
         require(all(x['Source'] == x['Destination'] for x in mounts),
@@ -157,6 +158,10 @@ def main():
         mirror_mounts = [x['Source'] for x in mounts if x['Source'] == x['Destination']]
         work_mount = [x for x in mirror_mounts if 'docker.sock' not in x]
         require(len(work_mount) == 1, 'Wrong number of mirror mounts provided, see documentation.')
+    '''
+    work_mount = os.getenv('TMPDIR', os.getcwd())
+
+
     # If sample is given as relative path, assume it's in the work directory
     if not all(x.startswith('/') for x in args.samples):
         args.samples = [os.path.join(work_mount[0], x) for x in args.samples if not x.startswith('/')]
