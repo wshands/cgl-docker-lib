@@ -162,10 +162,11 @@ def main():
 
     if "TMPDIR" in os.environ:
         log.info('Setting work mount to TMPDIR which is: {}'.format(os.environ['TMPDIR']))
-        work_mount = list(os.environ['TMPDIR'])
+        work_dir = os.environ['TMPDIR']
     else:
         log.info('TMPDIR not set; setting work mount to cwd which is: {}'.format(os.getcwd()))
-        work_mount = list(os.getcwd())
+        work_dir = os.getcwd()
+    
 
 #    work_mount = list(os.getenv('TMPDIR', os.getcwd()))
 
@@ -182,10 +183,13 @@ def main():
             "Sample inputs must point to a file's full path, "
             "e.g. '/full/path/to/kallisto_hg38.idx'.")
     # Output log information
-    log.info('The work mount is: {}'.format(work_mount[0]))
+    log.info('The work mount is: {}'.format(work_dir))
+#    log.info('The work mount is: {}'.format(work_mount[0]))
     log.info('Samples to run: {}'.format('\t'.join(args.samples)))
     log.info('Pipeline input locations: \n{}\n{}\n{}'.format(args.star, args.rsem, args.kallisto))
-    call_pipeline(work_mount[0], args)
+    call_pipeline(work_dir, args)
+#    call_pipeline(work_mount[0], args)
+
 
 
 if __name__ == '__main__':
