@@ -159,7 +159,15 @@ def main():
         work_mount = [x for x in mirror_mounts if 'docker.sock' not in x]
         require(len(work_mount) == 1, 'Wrong number of mirror mounts provided, see documentation.')
     '''
-    work_mount = os.getenv('TMPDIR', os.getcwd())
+
+    if "TMPDIR" in os.environ:
+        log.info('Setting work mount to TMPDIR which is: {}'.format(os.environ['TMPDIR'])
+        work_mount = os.environ['TMPDIR']
+    else
+        log.info('TMPDIR not set; setting work mount to cwd which is: {}'.format(os.getcwd())
+        work_mount = os.getcwd()
+
+#    work_mount = os.getenv('TMPDIR', os.getcwd())
 
 
     # If sample is given as relative path, assume it's in the work directory
