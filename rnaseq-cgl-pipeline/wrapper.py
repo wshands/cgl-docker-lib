@@ -161,10 +161,10 @@ def main():
     '''
 
     if "TMPDIR" in os.environ:
-        log.info('Setting work mount to TMPDIR which is: {}'.format(os.environ['TMPDIR'])
+        log.info('Setting work mount to TMPDIR which is: {}'.format(os.environ['TMPDIR']))
         work_mount = os.environ['TMPDIR']
-    else
-        log.info('TMPDIR not set; setting work mount to cwd which is: {}'.format(os.getcwd())
+    else:
+        log.info('TMPDIR not set; setting work mount to cwd which is: {}'.format(os.getcwd()))
         work_mount = os.getcwd()
 
 #    work_mount = os.getenv('TMPDIR', os.getcwd())
