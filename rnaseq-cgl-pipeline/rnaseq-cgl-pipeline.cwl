@@ -37,19 +37,19 @@ inputs:
       prefix: --samples
 
   star:
-    type: string
+    type: File
     doc: "Absolute path to STAR index tarball."
     inputBinding:
       prefix: --star
 
   rsem:
-    type: string
+    type: File
     doc: "Absolute path to rsem reference tarball."
     inputBinding:
       prefix: --rsem
 
   kallisto:
-    type: string
+    type: File
     doc: "Absolute path to kallisto index (.idx) file."
     inputBinding:
       prefix: --kallisto
