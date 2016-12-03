@@ -1,8 +1,8 @@
 #!/usr/bin/env cwl-runner
 
 class: CommandLineTool
-id: "RNA-Seq-CGL"
-label: "RNA-Seq CGL Pipeline"
+id: RNA-Seq-CGL
+label: RNA-Seq CGL Pipeline
 cwlVersion: v1.0
 
 $namespaces:
@@ -28,6 +28,12 @@ doc: |
     If there are any questions please contact the workflow author John Vivian (jtvivian@gmail.com). If you find any errors or corrections please feel free
     to make a pull request. Feedback of any kind is appreciated.  
 
+
+dct:creator:
+  '@id': http://orcid.org/0000-0002-7681-6415
+  foaf:name: Brian O'Connor
+  foaf:mbox: mailto:briandoconnor@gmail.com
+
 requirements:
   - class: DockerRequirement
     dockerPull: "quay.io/briandoconnor/rnaseq-cgl-pipeline:2.0.10"
@@ -38,11 +44,6 @@ hints:
     ramMin: 64000
     outdirMin: 500000000
     description: "The process requires at least 16G of RAM and we recommend 500GB or storage."
-
-dct:creator:
-  '@id': http://orcid.org/0000-0002-7681-6415
-  foaf:name: Brian O'Connor
-  foaf:mbox: mailto:briandoconnor@gmail.com
 
 inputs:
   samples:
