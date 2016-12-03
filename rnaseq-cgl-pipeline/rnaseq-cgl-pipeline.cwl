@@ -101,7 +101,7 @@ outputs:
       items: File
     outputBinding:
       # should be put in the working directory
-       glob: ./*
+       glob: *.tar.gz
     doc: "Result files RNA-seq CGL pipeline"
 
 baseCommand: ["python","/opt/rnaseq-pipeline/wrapper.py"]
