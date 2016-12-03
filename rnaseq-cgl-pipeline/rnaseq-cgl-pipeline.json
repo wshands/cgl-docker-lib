@@ -1,23 +1,30 @@
 {
-    "samples": [
-        {
-        "class": "File",
-        "path": "/mnt/actiontest/rnaseqteststuff/NA12878-NGv3-LAB1360-A.tar"
-        }
-    ],
-
-    "star": "/mnt/actiontest/rnaseqteststuff/starIndex_hg38_no_alt.tar.gz",
-
-    "rsem": "/mnt/actiontest/rnaseqteststuff/rsem_ref_hg38_no_alt.tar.gz",
-
-    "kallisto": "/mnt/actiontest/rnaseqteststuff/kallisto_hg38.idx",
-
-    "disable-cutadapt": false,
-
-    "save-bam": false,
-
-    "save-wiggle": false,
-
-    "no-clean": true
-
+   "rsem" : {
+      "class" : "File",
+      "path" : "https://s3.amazonaws.com/oconnor-test-bucket/sample-data/rsem_ref_hg38_no_alt.tar.gz"
+   },
+   "no-clean" : true,
+   "save-bam" : false,
+   "disable-cutadapt" : false,
+   "kallisto" : {
+      "path" : "https://s3.amazonaws.com/oconnor-test-bucket/sample-data/kallisto_hg38.idx",
+      "class" : "File"
+   },
+   "output_files" : [
+      {
+         "class" : "File",
+         "path" : "/tmp/small_NA12878-NGv3-LAB1360-A.tar.gz"
+      }
+   ],
+   "samples" : [
+      {
+         "class" : "File",
+         "path" : "redwood://storage2.ucsc-cgl.org/9eaa6251-7233-530c-86c3-6e0c7eeb50d0/0158bbe0-9bef-58cd-b058-af1707435618/small_NA12878-NGv3-LAB1360-A.tar"
+      }
+   ],
+   "save-wiggle" : false,
+   "star" : {
+      "path" : "https://s3.amazonaws.com/oconnor-test-bucket/sample-data/starIndex_hg38_no_alt.tar.gz",
+      "class" : "File"
+   }
 }

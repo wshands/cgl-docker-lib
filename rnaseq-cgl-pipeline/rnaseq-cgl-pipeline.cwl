@@ -1,31 +1,53 @@
 #!/usr/bin/env cwl-runner
 
 class: CommandLineTool
-id: "RNA-seq-CGL"
-label: "RNA-seq CGL Pipeline"
+id: RNA-Seq-CGL
+label: RNA-Seq CGL Pipeline
 cwlVersion: v1.0
+
+$namespaces:
+  dct: http://purl.org/dc/terms/
+  foaf: http://xmlns.com/foaf/0.1/
+
 doc: |
-    ![build_status](https://quay.io/wshands/rnaseq-cgl-pipeline/status)
-    The RNA-seq CGL pipeline.
+    ![build_status](https://quay.io/repository/briandoconnor/rnaseq-cgl-pipeline/status)
+    
+    **The UCSC RNA-seq CGL Workflow**
+    
+    For more information about this workflow see the Github [repo](https://github.com/BD2KGenomics/toil-scripts/tree/releases/2.0.10/src/toil_scripts/rnaseq_cgl) for the 2.0.10 release and the new [repo](https://github.com/BD2KGenomics/toil-rnaseq) for releases in the 3.x series and beyond.
+    
+    *Inputs*
+    
+    This pipeline is designed to take one or more fastq file pairs representing RNA-Seq analysis that have been tarred in a single tar file. 
+    
+    *Outputs*
+    
+    RNA-Seq fastqs are combined, aligned, and quantified with 2 different methods (RSEM and Kallisto). This pipeline produces a tarball (tar.gz) file for a given sample that contains:
     ```
-    Usage:
-    # fetch CWL
-    $> dockstore tool cwl --entry quay.io/ucsc_cgl/rnaseq-cgl-pipeline > rnaseq-cgl-pipeline.cwl
-    # make a runtime JSON template and edit it
-    $> dockstore tool convert cwl2json --cwl rnaseq-cgl-pipeline.cwl > rnaseq-cgl-pipeline.json
-    # run it locally with the Dockstore CLI
-    $> dockstore tool launch --entry quay.io/ucsc_cgl/rnaseq-cgl-pipeline  --json rnaseq-cgl-pipeline.json
+    RSEM: TPM, FPKM, counts and raw counts (parsed from RSEM output)
+    Kallisto: abundance.tsv, abundance.h5, and a JSON of run information
     ```
+    
+    *Feedback*
+    
+    If there are any questions please contact the workflow author John Vivian (jtvivian@gmail.com). If you find any errors or corrections please feel free to make a pull request. Feedback of any kind is appreciated.  
+
+
+dct:creator:
+  '@id': http://orcid.org/0000-0002-7681-6415
+  foaf:name: Brian O'Connor
+  foaf:mbox: briandoconnor@gmail.com
 
 requirements:
   - class: DockerRequirement
-    dockerPull: "quay.io/wshands/rnaseq-cgl-pipeline"
+    dockerPull: "quay.io/briandoconnor/rnaseq-cgl-pipeline:2.0.10-3"
+ 
 hints:
   - class: ResourceRequirement
     coresMin: 1
-    ramMin: 4092
-    outdirMin: 512000
-    description: "the process requires at least 4G of RAM"
+    ramMin: 64000
+    outdirMin: 500000000
+    description: "The process requires at least 16G of RAM and we recommend 500GB or storage."
 
 inputs:
   samples:
@@ -100,8 +122,7 @@ outputs:
       type: array
       items: File
     outputBinding:
-      # should be put in the working directory
-       glob: ./*
+      glob: '*.tar.gz'
     doc: "Result files RNA-seq CGL pipeline"
 
 baseCommand: ["python","/opt/rnaseq-pipeline/wrapper.py"]
