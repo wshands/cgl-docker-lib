@@ -160,17 +160,19 @@ def main():
         require(len(work_mount) == 1, 'Wrong number of mirror mounts provided, see documentation.')
     '''
 
-    if "TMPDIR" in os.environ:
-        log.info('Setting work mount to TMPDIR which is: {}'.format(os.environ['TMPDIR']))
-        work_dir = os.environ['TMPDIR']
-    else:
-        log.info('TMPDIR not set; setting work mount to cwd which is: {}'.format(os.getcwd()))
-        work_dir = os.getcwd()
+#    if "TMPDIR" in os.environ:
+#        log.info('Setting work mount to TMPDIR which is: {}'.format(os.environ['TMPDIR']))
+#        work_dir = os.environ['TMPDIR']
+#    else:
+#        log.info('TMPDIR not set; setting work mount to cwd which is: {}'.format(os.getcwd()))
+#        work_dir = os.getcwd()
     
 
 #    work_mount = list(os.getenv('TMPDIR', os.getcwd()))
 
-
+    # workdir is the cwd so CWL can collect the output
+    work_dir = os.getcwd()
+    
     # If sample is given as relative path, assume it's in the work directory
     if not all(x.startswith('/') for x in args.samples):
         args.samples = [os.path.join(work_mount[0], x) for x in args.samples if not x.startswith('/')]
