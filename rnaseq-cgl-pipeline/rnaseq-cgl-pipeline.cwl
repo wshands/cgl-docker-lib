@@ -30,7 +30,9 @@ doc: |
     RSEM: TPM, FPKM, counts and raw counts (parsed from RSEM output)
     Kallisto: abundance.tsv, abundance.h5, and a JSON of run information
     ```
-    * Feedback *
+    
+    *Feedback*
+    
     If there are any questions please contact the workflow author John Vivian (jtvivian@gmail.com). If you find any errors or corrections please feel free
     to make a pull request. Feedback of any kind is appreciated.  
 
