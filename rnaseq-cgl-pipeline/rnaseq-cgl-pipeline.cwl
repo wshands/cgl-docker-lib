@@ -118,7 +118,7 @@ outputs:
       type: array
       items: File
     outputBinding:
-      glob: *.tar.gz
+      glob: '*.tar.gz'
     doc: "Result files RNA-seq CGL pipeline"
 
 baseCommand: ["python","/opt/rnaseq-pipeline/wrapper.py"]
