@@ -14,9 +14,7 @@ doc: |
     
     **The UCSC RNA-seq CGL Workflow**
     
-    For more information about this workflow see the Github 
-    [repo](https://github.com/BD2KGenomics/toil-scripts/tree/releases/2.0.10/src/toil_scripts/rnaseq_cgl) for the 2.0.10 release
-    and the new [repo](https://github.com/BD2KGenomics/toil-rnaseq) for releases in the 3.x series and beyond.
+    For more information about this workflow see the Github [repo](https://github.com/BD2KGenomics/toil-scripts/tree/releases/2.0.10/src/toil_scripts/rnaseq_cgl) for the 2.0.10 release and the new [repo](https://github.com/BD2KGenomics/toil-rnaseq) for releases in the 3.x series and beyond.
     
     *Inputs*
     
@@ -24,8 +22,7 @@ doc: |
     
     *Outputs*
     
-    RNA-Seq fastqs are combined, aligned, and quantified with 2 different methods (RSEM and Kallisto)
-    This pipeline produces a tarball (tar.gz) file for a given sample that contains:
+    RNA-Seq fastqs are combined, aligned, and quantified with 2 different methods (RSEM and Kallisto). This pipeline produces a tarball (tar.gz) file for a given sample that contains:
     ```
     RSEM: TPM, FPKM, counts and raw counts (parsed from RSEM output)
     Kallisto: abundance.tsv, abundance.h5, and a JSON of run information
@@ -33,8 +30,7 @@ doc: |
     
     *Feedback*
     
-    If there are any questions please contact the workflow author John Vivian (jtvivian@gmail.com). If you find any errors or corrections please feel free
-    to make a pull request. Feedback of any kind is appreciated.  
+    If there are any questions please contact the workflow author John Vivian (jtvivian@gmail.com). If you find any errors or corrections please feel free to make a pull request. Feedback of any kind is appreciated.  
 
 
 dct:creator:
