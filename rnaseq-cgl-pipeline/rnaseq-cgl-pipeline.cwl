@@ -40,7 +40,7 @@ dct:creator:
 
 requirements:
   - class: DockerRequirement
-    dockerPull: "quay.io/briandoconnor/rnaseq-cgl-pipeline:2.0.10"
+    dockerPull: "quay.io/briandoconnor/rnaseq-cgl-pipeline:2.0.10-3"
  
 hints:
   - class: ResourceRequirement
