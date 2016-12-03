@@ -36,7 +36,7 @@ doc: |
 dct:creator:
   '@id': http://orcid.org/0000-0002-7681-6415
   foaf:name: Brian O'Connor
-  foaf:mbox: mailto:briandoconnor@gmail.com
+  foaf:mbox: briandoconnor@gmail.com
 
 requirements:
   - class: DockerRequirement
