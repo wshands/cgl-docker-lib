@@ -10,14 +10,20 @@ $namespaces:
   foaf: http://xmlns.com/foaf/0.1/
 
 doc: |
-    ![build_status](https://quay.io/briandoconnor/rnaseq-cgl-pipeline/status)
-    ** The UCSC RNA-seq CGL Workflow **
+    ![build_status](https://quay.io/repository/briandoconnor/rnaseq-cgl-pipeline/status)
+    
+    **The UCSC RNA-seq CGL Workflow**
+    
     For more information about this workflow see the Github 
     [repo](https://github.com/BD2KGenomics/toil-scripts/tree/releases/2.0.10/src/toil_scripts/rnaseq_cgl) for the 2.0.10 release
     and the new [repo](https://github.com/BD2KGenomics/toil-rnaseq) for releases in the 3.x series and beyond.
-    * Inputs *
+    
+    *Inputs*
+    
     This pipeline is designed to take one or more fastq file pairs representing RNA-Seq analysis that have been tarred in a single tar file. 
-    * Outputs *
+    
+    *Outputs*
+    
     RNA-Seq fastqs are combined, aligned, and quantified with 2 different methods (RSEM and Kallisto)
     This pipeline produces a tarball (tar.gz) file for a given sample that contains:
     ```
